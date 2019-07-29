@@ -26,3 +26,11 @@ String.prototype.Blength = function () {
     return arr == null ? this.length : this.length + arr.length;
 }
 ```
+
+#### // 轉英文大寫
+#### // OnKeyUp="LmtUpperStr(this);"
+```js
+function LmtUpperStr(o) {
+    o.value = o.value.toUpperCase();
+}
+```
