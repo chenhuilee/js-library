@@ -150,6 +150,7 @@ function validateNumber(evt) {
 #### 限實數欄位 (可負值,小數點)
 ```js
 // onKeyPress='validateDecimal(event)'
+
 function validateDecimal_old(evt) {
     if (evt.keyCode != 8) {
         var theEvent = evt || window.event;
@@ -162,9 +163,7 @@ function validateDecimal_old(evt) {
         }
     }
 }
-```
 
-```
 function validateDecimal(evt) {
     var thisEvent = evt || window.event;
     var keycode = (thisEvent.keyCode ? thisEvent.keyCode : thisEvent.which);
@@ -183,7 +182,7 @@ function validateDecimal(evt) {
 }
 ```
 
-#### //數值欄空白自動填入0
+#### 數值欄空白自動填入0
 ```
 //onblur="validateEmptyNumber(this)"
 function validateEmptyNumber(o) {
@@ -246,7 +245,7 @@ function getQueryString(paramName) {
 }
 ```
 
-#### // 系統時間
+#### 系統時間
 ```
 function ShowTime() {
     var d = new Date();
@@ -256,22 +255,24 @@ function ShowTime() {
 
 #### 數字加入"," 符號
 ```
+// nStr : 數字(字串)
+// dec : 小數位數
 function addCommas(nStr, dec) {
-    // nStr : 數字(字串)
-    // dec : 小數位數
     if (dec == null) dec = 2;
-    nStr = parseFloat(nStr).toFixed(dec);           //將小數位數補0 或四捨五入為指定位數
-    nStr += '';                                                             //將nStr 由數字轉為字串
-    x = nStr.split('.');                                                  //將nStr 切割為整數字串及小數字串並存入x[0] 及x[1]
-    x1 = x[0];                                                              //宣告x1 為整數字串
-    x2 = x.length > 1 ? '.' + x[1] : '';                       //宣告x2 為小數字串並處理(整數字串若(x.length > 1) 成立傳回('.' + x[1]) 否則傳回(''))
-    var rgx = /(\d+)(\d{3})/;                                    //宣告正則運算式：找到符合"(1或多個數字) + (3個數字)" 條件的字串
-    //找到時   (1或多個數字) ==> 傳回給正則運算變數$1
-    //               (3個數字)     ==> 傳回給正則運算變數$2                    
-    while (rgx.test(x1)) {                                        //重複測試正則運算式
-        x1 = x1.replace(rgx, '$1' + ',' + '$2');            //測試成功時x1= $1 + ',' + $2
+    nStr = parseFloat(nStr).toFixed(dec);    //將小數位數補0 或四捨五入為指定位數
+    nStr += '';                              //將nStr 由數字轉為字串
+    x = nStr.split('.');                     //將nStr 切割為整數字串及小數字串並存入x[0] 及x[1]
+    x1 = x[0];                               //宣告x1 為整數字串
+    x2 = x.length > 1 ? '.' + x[1] : '';     //宣告x2 為小數字串並處理(整數字串若(x.length > 1) 成立傳回('.' + x[1]) 否則傳回(''))
+    var rgx = /(\d+)(\d{3})/;                //宣告正則運算式：找到符合"(1或多個數字) + (3個數字)" 條件的字串
+    // 找到時 1或多個數字) ==> 傳回給正則運算變數$1
+    //        3個數字     ==> 傳回給正則運算變數$2                    
+    // 重複測試正則運算式
+    while (rgx.test(x1)) {                   
+        //測試成功時x1= $1 + ',' + $2
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');            
     }
-    return x1 + x2;                                                   //傳回結果
+    return x1 + x2;                                                   
 }
 ```
 
