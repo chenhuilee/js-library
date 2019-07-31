@@ -183,7 +183,7 @@ function validateDecimal(evt) {
 ```
 
 #### 數值欄空白自動填入0
-```
+```js
 //onblur="validateEmptyNumber(this)"
 function validateEmptyNumber(o) {
     if (o.value == '') {
@@ -193,7 +193,7 @@ function validateEmptyNumber(o) {
 ```
 
 ####  驗證 email 格式
-```
+```js
 // onblur='validateEmail(this);' 
 function validateEmail(o) {
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -207,7 +207,7 @@ function validateEmail(o) {
 ```
 
 #### 
-```
+```js
 // 欄位必須有值
 // onblur='validateRequireField(this);' 
 function validateRequireField(o) {
@@ -220,7 +220,7 @@ function validateRequireField(o) {
 ```
 
 #### 中文值檢測
-```
+```js
 function isChinese(name) {
     if (name.length == 0)
         return false;
@@ -233,7 +233,7 @@ function isChinese(name) {
 ```
 
 #### 讀取網址參數,如 http://www.abc.com/test.php?modseq=100 取得modseq的get參數值，即tSeq=100 
-```
+```js
 function getQueryString(paramName) {
     //paramName 為 參數名稱
     paramName = paramName.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]").toUpperCase();
@@ -254,7 +254,7 @@ function ShowTime() {
 ```
 
 #### 數字加入"," 符號
-```
+```js
 // nStr : 數字(字串)
 // dec : 小數位數
 function addCommas(nStr, dec) {
@@ -278,7 +278,7 @@ function addCommas(nStr, dec) {
 
 
 #### 
-```
+```js
 function select(sel) {
     var temp = null;
     if (temp == null) {
@@ -294,7 +294,7 @@ function select(sel) {
 ```
 
 #### 
-```
+```js
 function SetRecPos() {
     if (varIsEditing == false && window.event.srcElement.tagName.toUpperCase() == "TD") {
         SetRowColor(varCurrPos, 0);
@@ -316,8 +316,9 @@ function MouseEvents(objRef, evt) {
     }
 }
 ```
+
 #### 畫面全螢幕
-```
+```js
 // onload="ResizeFullScreen();"
 function ResizeFullScreen() {
     window.resizeTo(screen.availWidth, screen.availHeight);
@@ -326,14 +327,14 @@ function ResizeFullScreen() {
 ```
 
 #### show formId 
-```
+```js
 function showTitle() {
     document.title = document.forms(0).id;
 }
 ```
 
 #### //列印 HTML
-```
+```js
 function printDiv(divName) {
     var printContents = document.getElementById(divName).innerHTML;
     var originalContents = document.body.innerHTML;
@@ -344,7 +345,7 @@ function printDiv(divName) {
 ```
 
 #### // open new window
-```
+```js
 function OpenWindow(url, height, width, name) {
     if (!name) name = 'MyWindow';
     var screenLeft = 0, screenTop = 0;
