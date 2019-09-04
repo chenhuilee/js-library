@@ -1,6 +1,6 @@
 # test
 
-#### //判斷是否為行動設備
+#### 判斷是否為行動設備
 ```js
 function isMobileDev() {
     if (/ipad/i.test(navigator.userAgent.toLowerCase())) {
@@ -18,7 +18,7 @@ function isMobileDev() {
 }
 ```
 
-#### //string.Blength() 傳回字串的byte長度 https://dotblogs.com.tw/aquarius6913/2013/04/25/102272
+#### string.Blength() 傳回字串的byte長度 https://dotblogs.com.tw/aquarius6913/2013/04/25/102272
 ```js
 String.prototype.Blength = function () {
     var arr = this.match(/[^\x00-\xff]/ig);
